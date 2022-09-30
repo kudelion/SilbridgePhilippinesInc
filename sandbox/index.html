@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<!-- Theme Made By www.w3schools.com -->
+		<title>SILBRIDGE PHILIPPINES INC.</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<!-- NOTE: NEED KO NA ITONG ISAMA ITO NASA BABA? -->
+		<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>-->
+  <style>
+  body {
+    font: 400 20px Roboto, sans-serif; 
+    line-height: 1.8;
+    color: #000000;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 24px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color:  #003366;
+    color: #fff;
+    padding: 75px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 45px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #003366;
+    font-size: 50px;
+  }
+  .logo {
+    color: #003366;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #003366;
+  }
+  .carousel-indicators li {
+    border-color: #003366;
+  }
+  .carousel-indicators li.active {
+    background-color: #003366;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #003366; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #003366;
+    background-color: #fff !important;
+    color: #003366;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #003366 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+     margin-bottom: 0;
+     background-color: #ffffff;
+     z-index: 9999;
+     border: 0;
+     font-size: 12px !important;
+     line-height: 1.42857143 !important;
+     letter-spacing: 4px;
+     border-radius: 0;
+     font-family: Montserrat, sans-serif;
+    }
+  
+  .img-responsive{
+	  width: 50px;
+	  height: 45px;
+	  display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  .navbar li a, .navbar .navbar-brand {
+    color: #000000 !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #003366 !important;
+    background-color: #ffff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+	@media screen and (max-width: 480px) {
+		.logo {
+		font-size: 150px;
+		}
+	}
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="#myPage"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#about">ABOUT</a></li>
+					<li><a href="#services">SERVICES</a></li>
+					<li><a href="#products">PRODUCTS</a></li>
+					<li><a href="#pricing">PRICING</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--<div class="jumbotron text-center">  
+		<h1>SILBRIDGE PHILIPPINES INC.<h1> 
+		<p>We specialize in out of the box solutions</p> 
+		<form>
+			<div class="input-group">
+				<!--<input type="email" class="form-control" size="50" placeholder="Email Address" required>
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-secondary">Subscribe</button>
+				</div>
+			</div>
+		</form>
+	</div>-->
+	<div class="jumbotron text-center">   <!-- ==== NOTE: EDIT DONE 01FEB2022 === -->
+		<div class="col-sm-2">
+			<img src="SilbridgOfficialLogo3rev12.png" alt="logo" style="width:280px;height:280px;"/>
+		</div>	
+		<h1>SILBRIDGE PHILIPPINES INC.<h1> 
+		<p>We specialize in out of the box solutions</p>	
+		<form>
+			<div class="input-group">
+				<!--<input type="email" class="form-control" size="50" placeholder="Email Address" required>
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-secondary">Subscribe</button>
+				</div>-->
+			</div>
+		</form>
+	</div>
+<!-- Container (About Section) -->
+	<div id="about" class="container-fluid">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2>About SILBRIDGE PHILIPPINES INC.</h2></h2><br>
+				<h4>We are a start-up company that engages in providing <strong> OUT OF THE BOX </strong> solutions tailored fit for your 
+				business requirements and WE believe that delighting the customer is the key to success.</h4><br>
+				<p>We are a team of individuals with complementing expertise that can offer your organization achieve limitless 
+				solutions for your business requirements. We also believe that listening to our clients, building good 
+				relationships and establishing trust with our business partners are important in achieving customer satisfaction.</p>
+				<!--<br><button class="btn btn-default btn-lg">Get in Touch</button>-->
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-signal logo"></span>-->
+				<img src="Technology.jpg" alt="Tecnology" style="width:470px;height:400px;"/>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-grey">
+		<div class="row">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-globe logo slideanim"></span>-->
+				<img src="HandShake2.jpg" alt="HandShake" style="width:300px;height:300px;"/>
+			</div>
+			<div class="col-sm-8">
+				<h2>Our Values</h2><br>
+				<h4><strong>MISSION:</strong> To be a reliable partner in the area of process and equipment automation, monitoring systems and supply of custom materials.</h4><br>
+				<h4><strong>VISION:</strong> We strive to provide efficient and effective solutions to our clients through our enabled stakeholders with the environment in mind.</h4>
+			</div>
+		</div>
+	</div>
+<!-- Container (Services Section)--> 
+	<div id="services" class="container-fluid text-center">
+		<h2>SERVICES</h2>
+		<h4>What we offer</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="Project.jpg" alt="Project" style="width:420px;height:275px;"/>
+				<h2>AUTOMATION and EQUIPMENT SOLUTIONS</h2>
+				<p><h3>Process Automation</h3></p>
+				<p>Manual Process to Automated Process</p>
+				<p>Conversion from Semi-Auto to Full-Auto</p>
+				<p>Equipment Modification for Increased Throughput</p>
+				<p>Equipment Restoration</p>
+				<p>Robotic Systems</p>
+				<p><h3>Custom Automation</h3></p>
+				<p>Equipment Upgrade</p>
+				<p>Equipment Retrofit</p>
+				<p>Equipment Repair and Rehabilitation</p>
+				<p>Jigs and Fixtures</p>
+
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="Monitoring.jpg" alt="Monitoring" style="width:420px;height:275px;"/>
+				<h2>MONITORING SOLUTION</h2>
+				<p><h3>Site Equipment and Environment Monitoring System (SEEMS)</h3></p>
+				<p>Environment</p>
+				<p>Facility</p>
+				<p>Equipment</p>
+				<p>Production: Uptime, Downtime, Efficiency</p>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-lock logo-small"></span>-->
+				<img src="FiberOptics.jpg" alt="Monitoring" style="width:420px;height:275px;"/>
+				<h2>PRODUCTS</h2>
+				<p><h3>EQUIPMENT and SUPPLIES</h3></p>
+				<p>Vision and Inspection Systems</p>
+				<p>PCB Handling</p>
+				<p>Data Networking – Copper and Fiber</p>
+				<p>ESD Materials</p>
+				<p>Geared Motors<p>
+				<p>Cleanroom Materials</p>
+			</div>
+		</div>
+	<div id="products" class="container-fluid text-center">
+		<h2>PRODUCTS</h2>
+		<h3>SEMICONDUCTOR  and  LED</h3>
+		<h4>MOLD DIE SET</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="mold.jpg" alt="conventional mold" style="width:300px;height:275px;"/>
+				<img src="mold1.jpg" alt="conventional mold output" style="width:300px;height:275px;"/>
+				<h2>CONVENTIONAL MOLD</h2>
+				<p><h3>KEY FEATURES</h3></p>
+				<p>SUITABLE for mass PRODUCTION</p>
+				<p>LOW COST for fabrication</p>
+				<p>Commonplace mold</p>
+				<p>ALL kinds of PACKAGES</p>
+				<p>Standard Materials: ASP 23</p>
+				<p>POT TIP: H13/SKH9/T.C</p>
+				<p>Chase Interlock Design: Mismatch greater than 1.5 mil </p>
+				<p>T.C Gate Insert Design</p>
+				<p>NO Crown flash of E-J pin</p>
+				<p>Location pin - BLOCK type</p>
+				<p>Pressure Sensor: Detect Mis loading of lead frame</p>
+				<p>Heat Loss cover: TEFLON CLOTH and Dupon Nomex T994</p>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="mold2.jpg" alt="MGP mold" style="width:300px;height:275px;"/>
+				<img src="mold3.jpg" alt="MGP mold output" style="width:300px;height:275px;"/>
+				<h2>MGP MOLD</h2>
+				<p><h3>KEY FEATURES</h3></p>
+				<p>BALANCE filling and HIGH Quality</p>
+				<p>Can use FAST cure COMPOUND</p>
+				<p>SOLUTION for VENTING and GATING design</p>
+				<p>MINIMIZE compound USAGE</p>
+				<p>TOP and BUTTOM individual aligner</p>
+				<p>NO jamming on the pot and plunger</p>
+				<p>Standard Materials: ASP 23</p>
+				<p>POT TIP: T.C</p>
+				<p>Chase Interlock Design: Mismatch greater than 1.5 mil </p>
+				<p>T.C Gate Insert Design</p>
+				<p>NO Crown flash of E-J pin</p>
+				<p>Location pin - BLOCK type</p>
+				<p>Pressure Sensor: Detect Mis loading of lead frame</p>
+				<p>Heat Loss cover: TEFLON CLOTH and Dupon Nomex T994</p>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-lock logo-small"></span>-->
+				<img src="mold4.jpg" alt="Auto mold" style="width:300px;height:275px;"/>
+				<img src="mold5.jpg" alt="Auto mold output" style="width:300px;height:275px;"/>
+				<h2>AUTO MOLD</h2>
+				<p><h3>KEY FEATURES</h3></p>
+				<p>ALL kinds of auto mold CHASES</p>
+				<p>ALL kinds of full conversion kits for auto mold system </p>
+				<p>Standard Materials: ASP 23</p>
+				<p>POT TIP: T.C</p>
+				<p>Chase Interlock Design: Mismatch greater than 1.5 mil </p>
+				<p>T.C Gate Insert Design</p>
+				<p>NO Crown flash of E-J pin</p>
+				<p>Location pin - BLOCK type</p>
+				<p>Pressure Sensor: Detect Mis loading of lead frame</p>				
+			</div>
+		</div>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="mold6.jpg" alt="Book mold" style="width:300px;height:275px;"/>
+				<h2>BOOK MOLD</h2>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="mold7.jpg" alt="SEMIMGP mold" style="width:300px;height:275px;"/>
+				<h2>SEMI-MGP Mold</h2>
+			</div>
+		</div>
+		<h3>SEMICONDUCTOR  and  LED</h3>
+		<h4>MOLD DIE TOOLS and SPARE PARTS</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="MDspareparts.jpg" alt="Mold Die Spare Parts 1" style="width:300px;height:275px;"/>
+				<img src="MDspareparts1.jpg" alt="Mold Die Spare Parts 2" style="width:300px;height:275px;"/>
+				<h2>MOLD DIE SPARE PARTS</h2>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="MDspareparts2.jpg" alt="Tool Spare Parts" style="width:420px;height:275px;"/>
+				<h2>TOOL SPARE PARTS</h2>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="MDspareparts3.jpg" alt="Auto Mold conversion kits" style="width:600px;height:275px;"/>
+				<h2>AUTO MOLD CONVERSION KITS </h2>
+			</div>			
+		</div>
+		<h3>TOOL UNIT</h3>
+		<h4>TRIM/FORM/SINGULATION/BGA SINGULATION</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="ToolUnit.jpg" alt="Tool Unit" style="width:300px;height:275px;"/>
+				<h2>TOOL UNIT</h2>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="ToolUnit1.jpg" alt="ISOLATION MODULE" style="width:420px;height:275px;"/>
+				<h2>ISOLATION MODULE</h2>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="ToolUnit2.jpg" alt="SINGULATE MODULE" style="width:420px;height:275px;"/>
+				<h2>SINGULATE MODULE</h2>
+			</div>			
+		</div>
+		<h3>BALL MOUNTER CONVERSION</h3>
+		<h4>SOLDER BALL ATTACH KIT</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="ballmount.jpg" alt="Ballmount machine" style="width:470px;height:275px;"/>
+				<h2>BALL MOUNTER</h2>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="ballmount2.jpg" alt="Ballmount kit" style="width:200px;height:275px;"/>
+				<img src="ballmount1.jpg" alt="Ballmount kit" style="width:200px;height:275px;"/>
+				<img src="ballmount3.jpg" alt="Ballmount kit" style="width:200px;height:275px;"/>
+				<h2>CONVERSION and SOLDER BALL ATTACH KITS</h2>
+			</div>		
+		</div>
+		<h3>SPARE PARTS</h3>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="spareparts.jpg" alt="Ballmount machine" style="width:470px;height:275px;"/>
+			</div>
+			<div class="col-sm-4">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="spareparts1.jpg" alt="Ballmount kit" style="width:470px;height:275px;"/>
+			</div>		
+		</div>
+		<h3>MACHINE VISION SYSTEM</h3>
+		<h4>HIKROBOT MACHINE VISION PRODUCTS</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-12">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="hikrobot.jpg" alt="vision systems" style="width:1080px;height:720px;"/>
+			</div>
+			<div class="col-sm-12">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="hikrobot1.jpg" alt="vision systems" style="width:1080px;height:720px;"/>
+			</div>
+			<div class="col-sm-12">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="hikrobot2.jpg" alt="vision systems" style="width:1080px;height:720px;"/>
+			</div>	
+			<div class="col-sm-12">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="hikrobot3.jpg" alt="vision systems" style="width:1080px;height:720px;"/>
+			</div>	
+			<div class="col-sm-12">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="hikrobot4.jpg" alt="vision systems" style="width:1080px;height:720px;"/>
+			</div>
+		</div>	
+		<h3>MONITORING SOLUTION</h3>
+		<h4>Site Equipment and Environment Monitoring System(SEEMS)</h4>
+		<br>
+		<div class="row slideanim">
+			<div class="col-sm-12">
+				<!--<span class="glyphicon glyphicon-off logo-small"></span>-->
+				<img src="Monitoring.jpg" alt="Monitoring" style="width:1080px;height:720px;"/>
+			</div>
+			<div class="col-sm-12">
+				<!--<span class="glyphicon glyphicon-heart logo-small"></span>-->
+				<img src="seems.jpg" alt="SEEMS" style="width:1080px;height:720px;"/>
+			</div>							
+		</div>				
+		<br><br>
+		<!--<div class="row slideanim">
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-leaf logo-small"></span>
+				<h4>TECHNOLOGY</h4>
+				<p>Lorem ipsum dolor sit amet..</p>
+			</div>
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-certificate logo-small"></span>
+				<h4>WEB HOSTING</h4>
+				<p>Lorem ipsum dolor sit amet..</p>
+			</div>
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-wrench logo-small"></span>
+				<h4 style="color:#303030;">TRADING</h4>
+				<p>Lorem ipsum dolor sit amet..</p>
+			</div>
+		</div>-->
+	</div>
+
+<!-- Container (Portfolio Section) -->
+	<!--<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>What we have created</h4>
+  <div class="row text-center slideanim">
+		<div class="col-sm-4">
+			<div class="thumbnail">
+				<img src="silbridgeph.com/v5/IMAGE1.png" alt="IMAGE1" width="400" height="300">
+				<p><strong>ABC Company Conveyor System</strong></p>
+				<p>Yes, we built Conveyor Systems</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="thumbnail">
+				<img src="silbridgeph.com/v5/IMAGE2.png" alt="IMAGE2" width="400" height="300">
+				<p><strong>JnJ Surveillance System</strong></p>
+				<p>We install Surveillance System</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="thumbnail">
+				<img src="silbridgeph.com/v5/IMAGE3.png" alt="IMAGE3" width="400" height="300">
+				<p><strong>Company Software Sollution</strong></p>
+				<p>Yes, We do software solution.</p>
+			</div>
+		</div>
+	</div><br>
+  
+<!--==============================
+        Uncomment if needed
+==================================	
+	<h2>What our customers say</h2>
+	<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+		<!-- Indicators -->
+		<!--<ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<!--==============================
+				Uncomment if needed
+			==================================	
+			<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+		</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<!--==================================
+				Uncomment if needed
+			==================================	
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+</div>
+
+<!-- Container (Pricing Section) -->
+<!--<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Pricing</h2>
+    <h4>Choose a payment plan that works for you</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Basic</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>20</strong> Lorem</p>
+          <p><strong>15</strong> Ipsum</p>
+          <p><strong>5</strong> Dolor</p>
+          <p><strong>2</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$19</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg">Sign Up</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Pro</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>50</strong> Lorem</p>
+          <p><strong>25</strong> Ipsum</p>
+          <p><strong>10</strong> Dolor</p>
+          <p><strong>5</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$29</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg">Sign Up</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Premium</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>100</strong> Lorem</p>
+          <p><strong>50</strong> Ipsum</p>
+          <p><strong>25</strong> Dolor</p>
+          <p><strong>10</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$49</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg">Sign Up</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+	</div>-->
+
+<!-- Container (Contact Section) -->
+	<div id="contact" class="container-fluid bg-grey">
+			<h2 class="text-center">CONTACT</h2>
+		<div class="row">
+			<div class="col-sm-5">
+				<p>Contact us and we'll get back to you the soonest.</p>
+				<p><span class="glyphicon glyphicon-map-marker"></span>4th St. Sitio Burol, Brgy. San Juan, Taytay, Rizal 1902, Philippines</p>
+				<!--<p><span class="glyphicon glyphicon-map-marker"></span>Printway Building, B-17D, Lot 3 Gran Seville Commercial, Banlic, Cabuyao, Laguna 4025, Philippines</p>-->
+				<p><span class="glyphicon glyphicon-phone"></span> +63275069979</p>
+				<p><span class="glyphicon glyphicon-phone"></span> +639178442407</p>
+				<p><span class="glyphicon glyphicon-envelope"></span> contact@silbridgeph.com</p>
+			</div>
+			<div class="col-sm-7 slideanim">
+				<!--<div class="row">
+					<div class="contact-form">
+						<form id="contact-form" method="post" action="">
+							<input name="name" type="text" class="form-control" placeholder="your name"><br>
+							<input name="e-mail" type="e-mail" class="form-control" placeholder="your e-mail"><br>
+							<textarea name="message" class="form-control" placeholder="Message" row="5"></textarea><br>
+							<input type="submit" class="form-control" value="SEND MAIL"> 
+						</form>
+					</div>
+				</div>-->
+				<div class="contact-form">
+					<form id="contact-form" method="post" action="contact-form-handler.php">
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+							</div>
+							<div class="col-sm-6 form-group">
+								<input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+							</div>
+						</div>
+						<textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5" required></textarea><br>
+						<div class="row">
+							<div class="col-sm-12 form-group">
+								<button class="btn btn-default pull-right" type="submit">Send</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <!--<span class="glyphicon glyphicon-chevron-up"></span>-->
+  </a>
+  <!--<p>Bootstrap Theme Made By <a href="https://www.silbridgeph.com" title="Visit w3schools">www.silbridgeph.com</a></p>-->
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+
+</script>
+</body>
+</html>
+
+<!--Changes-->
+<!--Remove "Silridge/v5/ to all images-->
+<!--Change font: 400 20px Roboto, sans-serif; to font: 400 20px Loto, sans-serif;-->
